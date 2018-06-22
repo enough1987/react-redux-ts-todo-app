@@ -5,5 +5,5 @@ export enum ArticleActionsTypes {
     DELETE = 'deleteArticle',
 }
 
-export const addArticle = (article: Article) => ({ type: ArticleActionsTypes.ADD, payload: article });
-export const deleteArticle = (article: Article) => ({ type: ArticleActionsTypes.DELETE, payload: article.id });
+export const addArticleCreator = (article: Article) => ({ type: ArticleActionsTypes.ADD, payload: article });
+export const deleteArticleCreator = (article: Article) => ({ type: ArticleActionsTypes.DELETE, payload: article.id });

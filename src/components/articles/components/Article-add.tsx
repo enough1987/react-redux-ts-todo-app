@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Article } from '../+store/dictionery';
 import { connect } from 'react-redux';
-import { addArticle } from '../+store/articles.action';
+import { addArticleCreator } from '../+store/articles.action';
 import store from '../../../+store/store';
 
 interface ArticleAddProps extends React.Props<never> {
@@ -30,6 +30,7 @@ class ArticleAdd extends React.Component<ArticleAddProps, ArticleAddState> {
 
     public render() {
         const { name, author, isValid } = this.state;
+
         return (
             <div>
                 <p> Name :
@@ -83,7 +84,7 @@ class ArticleAdd extends React.Component<ArticleAddProps, ArticleAddState> {
 const mapDispatchToProps = () => {
     return {
         addArticle: (article: Article) => {
-            store.dispatch(addArticle(article));
+            store.dispatch(addArticleCreator(article));
         },
     };
 };
