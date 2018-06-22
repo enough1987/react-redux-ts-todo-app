@@ -4,7 +4,3 @@ export interface Article {
     name: string;
     author: string;
 }
-
-export interface ArticleState {
-    articles: Article[];
-}

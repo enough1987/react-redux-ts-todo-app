@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Article } from '../+store/dictionery';
 import { connect } from 'react-redux';
 import { deleteArticle } from '../+store/actions/articles.action';
-import store from '../+store/store';
+import store from '../../../+store/store';
 
 interface ArticlesListProps extends React.Props<Article[]> {
     articles: Article[];
@@ -27,6 +27,7 @@ class ArticlesList extends React.Component<ArticlesListProps> {
 }
 
 const mapStateToProps = (state: any) => {
+    console.log(state);
     return { articles : state.articles };
 };
 

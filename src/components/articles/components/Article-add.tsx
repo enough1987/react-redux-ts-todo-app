@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Article } from '../+store/dictionery';
 import { connect } from 'react-redux';
 import { addArticle } from '../+store/actions/articles.action';
-import store from '../+store/store';
+import store from '../../../+store/store';
 
 interface ArticleAddProps extends React.Props<never> {
     addArticle: (article: Article) => {};
