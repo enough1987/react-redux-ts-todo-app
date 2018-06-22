@@ -1,4 +1,4 @@
-import { Article } from '../dictionery';
+import { Article } from './dictionery';
 
 export enum ArticleActionsTypes {
     ADD = 'addArticle',

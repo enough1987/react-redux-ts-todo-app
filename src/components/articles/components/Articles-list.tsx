@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Article } from '../+store/dictionery';
 import { connect } from 'react-redux';
-import { deleteArticle } from '../+store/actions/articles.action';
+import { deleteArticle } from '../+store/articles.action';
 import store from '../../../+store/store';
 
 interface ArticlesListProps extends React.Props<Article[]> {

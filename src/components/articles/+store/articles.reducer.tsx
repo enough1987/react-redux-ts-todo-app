@@ -1,5 +1,5 @@
-import { ArticleActionsTypes } from '../actions/articles.action';
-import { Article } from '../dictionery';
+import { ArticleActionsTypes } from './articles.action';
+import { Article } from './dictionery';
 
 const initialState: Article[] = [];
 
