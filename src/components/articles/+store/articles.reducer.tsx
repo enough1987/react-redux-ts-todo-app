@@ -8,6 +8,8 @@ const articlesReducer = (
         action: { type: string, payload: any },
     ): Article[] => {
     switch (action.type) {
+        case ArticleActionsTypes.SET:
+            return action.payload;
         case ArticleActionsTypes.ADD:
             return [...state, {
                     id: state.length,
