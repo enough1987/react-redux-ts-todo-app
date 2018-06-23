@@ -6,10 +6,12 @@ export enum ArticleActionsTypes {
     DELETE = 'ARTICLES_deleteArticle',
 }
 
+// SYNC
 export const setArticlesCreator = (articles: Article[]) => ({ type: ArticleActionsTypes.SET, payload: articles });
 export const addArticleCreator = (article: Article) => ({ type: ArticleActionsTypes.ADD, payload: article });
 export const deleteArticleCreator = (article: Article) => ({ type: ArticleActionsTypes.DELETE, payload: article.id });
 
+// ASYNC
 export const fatchArticlesCreator = () => {
     return (dispatch: any) => {
         setTimeout(() => {

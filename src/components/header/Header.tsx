@@ -1,12 +1,15 @@
 import * as React from 'react';
-import logo from './logo.svg';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
     public render() {
         return (
             <header className='App-header'>
-                <img src={logo} className='App-logo' alt='logo' />
-                <h1 className='App-title'>Welcome to React with redux , connect, typescript</h1>
+                <h1 className='App-title'>Welcome to todo app </h1>
+                <ul>
+                    <li><Link to={`/`} >Home</Link></li>
+                    <li><Link to={`/articles`} >Articles</Link></li>
+                </ul>
             </header>
         );
     }

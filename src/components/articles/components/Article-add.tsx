@@ -72,7 +72,6 @@ class ArticleAdd extends React.Component<ArticleAddProps, ArticleAddState> {
                 ...BASE_ARTICLE_STATE,
                 isValid,
             });
-            console.log(this.state.name, this.state.author, this.state.isValid);
             return;
         }
         this.props.addArticle({ name, author });

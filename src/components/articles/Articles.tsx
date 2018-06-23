@@ -4,8 +4,8 @@ import ArticlesList from './components/Articles-list';
 import ArticleAdd from './components/Article-add';
 import { connect } from 'react-redux';
 import { fatchArticlesCreator } from './+store/articles.action';
-import store from '../../+store/store';
 import { Article } from './+store/dictionery';
+import store from '../../+store/store';
 
 interface ArticlesProps extends React.Props<Article> {
     fetchArticles: () => {};
