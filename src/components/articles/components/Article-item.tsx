@@ -6,18 +6,16 @@ import { connect } from 'react-redux';
 
 interface ArticleItemProps extends React.Props<Article> {
     article: Article;
-    index: number;
     deleteArticle: (article: Article) => {};
 }
 
 class ArticleItem extends React.Component<ArticleItemProps> {
 
     public render() {
-        const { article, index, deleteArticle } = this.props;
+        const { article, deleteArticle } = this.props;
 
         return (
-                    <li className='list-group-item'
-                        key={index}>
+                    <li className='list-group-item'>
                         {article.name}
                         <input type='button' value='x'
                                onClick={() => deleteArticle(article)}/>

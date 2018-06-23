@@ -16,7 +16,7 @@ class ArticlesList extends React.Component<ArticlesListProps> {
             <div>
                 {articles.map((article: Article, index: number) => (
                     <ArticleItem
-                        index={index}
+                        key={index}
                         article={article}>
                     </ArticleItem>
                 ))}
@@ -26,7 +26,6 @@ class ArticlesList extends React.Component<ArticlesListProps> {
 }
 
 const mapStateToProps = (state: any) => {
-    console.log(state);
     return { articles : state.articles };
 };
 
