@@ -3,6 +3,7 @@ import { Article } from './dictionery';
 export enum ArticleActionsTypes {
     SET = 'ARTICLES_setArticles',
     ADD = 'ARTICLES_addArticle',
+    ADD_WITH_EPIC = 'ARTICLES_addArticleWithEpic',
     DELETE = 'ARTICLES_deleteArticle',
 }
 

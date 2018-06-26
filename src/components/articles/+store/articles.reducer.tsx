@@ -16,6 +16,12 @@ const articlesReducer = (
                     author: action.payload.author,
                     name: action.payload.name,
                 }];
+        case ArticleActionsTypes.ADD_WITH_EPIC:
+            return [...state, {
+                id: state.length,
+                author: 'hello from EPIC',
+                name: 'hello from EPIC',
+            }];
         case ArticleActionsTypes.DELETE:
             return [...state.filter((article) => article.id !== action.payload)];
         default:
