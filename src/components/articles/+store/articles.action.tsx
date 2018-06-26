@@ -4,6 +4,7 @@ export enum ArticleActionsTypes {
     SET = 'ARTICLES_setArticles',
     ADD = 'ARTICLES_addArticle',
     ADD_WITH_EPIC = 'ARTICLES_addArticleWithEpic',
+    TEST_EPIC = 'TEST_EPIC',
     DELETE = 'ARTICLES_deleteArticle',
 }
 

@@ -1,12 +1,10 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import articlesReducer from '../components/articles/+store/articles.reducer';
+import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import { routerReducer } from 'react-router-redux';
-import { combineEpics, createEpicMiddleware, Epic } from 'redux-observable';
-import { Action } from './dictionery';
-import { mapTo } from 'rxjs/operators';
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { EPICS } from './epics';
 import { ArticleActionsTypes } from '../components/articles/+store/articles.action';
+import { REDUCERS } from './reducers';
 
 const MIDDLEWARES = [];
 
@@ -19,17 +17,9 @@ if (process.env.NODE_ENV === `development`) {
     MIDDLEWARES.push(logger);
 }
 
-const pingEpic: Epic<Action> = (action$) =>
-    action$.ofType('TEST_EPIC').pipe(
-        mapTo({ type: ArticleActionsTypes.ADD_WITH_EPIC }),
-    );
-
 const epicMiddleware = createEpicMiddleware();
 
-const store = createStore(combineReducers({
-        routing: routerReducer,
-        articles: articlesReducer,
-    }),
+const store = createStore(REDUCERS,
     applyMiddleware(
         ...MIDDLEWARES,
         epicMiddleware,
@@ -38,12 +28,13 @@ const store = createStore(combineReducers({
 );
 
 epicMiddleware.run(combineEpics(
-    pingEpic,
+    EPICS,
 ));
 
+// used for testing epic
 setTimeout(() => {
     store.dispatch({
-        type: 'TEST_EPIC',
+        type: ArticleActionsTypes.TEST_EPIC,
     });
 }, 1500);
 
