@@ -32,10 +32,8 @@ epicMiddleware.run(combineEpics(
 ));
 
 // used for testing epic
-setTimeout(() => {
-    store.dispatch({
+store.dispatch({
         type: ArticleActionsTypes.TEST_EPIC,
     });
-}, 1500);
 
 export default store;
